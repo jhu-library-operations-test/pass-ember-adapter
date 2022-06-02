@@ -27,7 +27,7 @@ jobs:
           cache-dependency-path: package-lock.json
           
       - name: Security updates?
-        run: npm audit fix
+        run: npm audit fix --force
         
       - name: Build project
         run: npm install

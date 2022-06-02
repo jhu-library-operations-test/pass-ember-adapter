@@ -4,7 +4,7 @@ on:
 
 jobs:
   build:
-    timeout-minutes: 15
+    timeout-minutes: 25
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,10 +22,13 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v2
         with:
-          node-version: lts/gallium
-          cache: npm
+          node-version: lts/*
+          cache: 'npm'
           cache-dependency-path: package-lock.json
           
+      - name: Security updates?
+        run: npm audit fix
+        
       - name: Build project
         run: npm install
         

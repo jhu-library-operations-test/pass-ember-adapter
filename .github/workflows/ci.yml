@@ -14,4 +14,4 @@ jobs:
 
   call-tests-unit:
     name: Run Unit Tests
-    uses: eclipse-pass/pass-ember-adapter/.github/workflows/tests-unit.yml@main
+    uses: jhu-library-operations-test/pass-ember-adapter/.github/workflows/tests-unit.yml@main

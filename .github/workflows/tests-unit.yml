@@ -10,9 +10,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
-      - name: Start containers
+      - name: Pull
         run: docker-compose pull
+
+      - name: Start containers
         run: docker-compose up -d
+
+      - name: Wait till ES ready
         run: bash .wait.sh
         
       - name: Install Node
